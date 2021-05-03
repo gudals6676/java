@@ -1,0 +1,43 @@
+package DaoVo;
+
+public class StudentVO {
+	String Tea_Number;
+	String tea_id;
+	String tea_pw;
+	String tea_name;
+	String tea_subject;
+	
+	String Class_Number;
+	//String Tea_number;// 외래는 _2중 형식 선언
+	String class_className;
+	String class_startDate;
+	String class_endDate;
+	String class_branch;
+	
+	String Stu_Number; // 기본 키는 _없이 선언
+	String Class_number;
+	//String Tea_number;
+	String stu_id;
+	String stu_pw;
+	String stu_name;
+	String stu_birthday;
+	String stu_address;
+	String stu_email;
+	String stu_meet;
+
+	String Sco_Number;
+	//String Stu_number;
+	String sco_date;
+	String sco_subject;
+	String sco_score;
+
+	String Bd_number;
+	//String Stu_number;
+	//String Tea_number;
+	String bd_date;
+	String bd_time;
+	String bd_place;
+	String bd_peoplenumber;
+	String bd_content;
+	
+}

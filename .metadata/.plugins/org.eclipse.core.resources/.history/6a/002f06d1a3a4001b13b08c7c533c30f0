@@ -1,0 +1,94 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
+
+
+import DAO.StudentDAO;
+import VO.StudentVO;
+
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+
+public class Classmgment_GUI {
+	
+   
+	
+	boolean al = (Boolean) null;
+    StudentDAO dao = new StudentDAO();
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	
+
+	/**
+	 * Create the application.
+	 */
+	public Classmgment_GUI() {
+		
+		
+		initialize();
+		frame.setVisible(true);
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 600, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 157, 435, 294);
+		frame.getContentPane().add(scrollPane);
+		
+		JTable table = new JTable();
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JLabel lblNewLabel = new JLabel("CLASS LIST");
+		lblNewLabel.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 24));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(140, 83, 186, 52);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btn_insert = new JButton("\uBC18 \uC0DD\uC131");
+		btn_insert.setFont(new Font("±º∏≤", Font.BOLD, 13));
+		btn_insert.setBounds(459, 199, 97, 43);
+		frame.getContentPane().add(btn_insert);
+		
+		JButton btn_delete = new JButton("\uBC18 \uC0AD\uC81C");
+		btn_delete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				boolean result = dao.Class_delete(class_delete_number);
+				System.out.println();
+				System.out.println(result);
+				if(result == true) {
+					JOptionPane.showMessageDialog(null, "π›ªË¡¶ º∫∞¯");
+					new Classmgment_GUI();
+					frame.dispose();
+				}else {
+					JOptionPane.showMessageDialog(null, "π›ªË¡¶ Ω«∆–", "π›ªË¡¶", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		btn_delete.setFont(new Font("±º∏≤", Font.BOLD, 13));
+		btn_delete.setBounds(459, 262, 97, 43);
+		frame.getContentPane().add(btn_delete);
+	}
+}

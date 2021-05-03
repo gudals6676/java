@@ -1,0 +1,81 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+
+public class LoginGUI extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField tf_id;
+	private JTextField tf_pw;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LoginGUI1 frame = new LoginGUI1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public LoginGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(24, 10, 243, 55);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(301, 20, 88, 45);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lbl_id = new JLabel("ID :");
+		lbl_id.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_id.setBounds(88, 113, 57, 15);
+		contentPane.add(lbl_id);
+		
+		JLabel lbl_pw = new JLabel("PW :");
+		lbl_pw.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_pw.setBounds(88, 160, 57, 15);
+		contentPane.add(lbl_pw);
+		
+		tf_id = new JTextField();
+		tf_id.setBounds(167, 110, 116, 21);
+		contentPane.add(tf_id);
+		tf_id.setColumns(10);
+		
+		tf_pw = new JTextField();
+		tf_pw.setBounds(167, 157, 116, 21);
+		contentPane.add(tf_pw);
+		tf_pw.setColumns(10);
+		
+		JButton btn_로그인 = new JButton("\uB85C\uADF8\uC778");
+		btn_로그인.setBounds(254, 209, 97, 23);
+		contentPane.add(btn_로그인);
+		
+		JButton btn_회원가입 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btn_회원가입.setBounds(114, 209, 97, 23);
+		contentPane.add(btn_회원가입);
+	}
+}

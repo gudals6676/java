@@ -1,0 +1,78 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+
+public class ScoreinfoGUI extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+	private JTable table_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ScoreinfoGUI1 frame = new ScoreinfoGUI1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ScoreinfoGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 158, 54);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(320, 0, 114, 41);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lbl_M = new JLabel("SCORE INFO");
+		lbl_M.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 25));
+		lbl_M.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_M.setBounds(17, 76, 330, 41);
+		contentPane.add(lbl_M);
+		
+		table = new JTable();
+		table.setBounds(111, 309, 88, -29);
+		contentPane.add(table);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 133, 410, 306);
+		contentPane.add(scrollPane);
+		
+		table_1 = new JTable();
+		scrollPane.setViewportView(table_1);
+		
+		JButton btnNewButton = new JButton("\uBCF4\uCDA9 \uC2E0\uCCAD");
+		btnNewButton.setBounds(334, 91, 88, 23);
+		contentPane.add(btnNewButton);
+	}
+}

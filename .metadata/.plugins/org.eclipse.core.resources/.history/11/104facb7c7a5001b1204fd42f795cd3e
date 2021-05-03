@@ -1,0 +1,132 @@
+package GUI;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import DaoVo.StudentDAO;
+import DaoVo.StudentVO;
+
+import javax.swing.JScrollPane;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
+import javax.swing.JCheckBox;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+
+public class SupplementaryData_GUI {
+
+	private JFrame frame;
+
+
+	/**
+	 * Launch the application.
+	 */
+	
+
+	/**
+	 * Create the application.
+	 */
+	public SupplementaryData_GUI() {
+	
+		initialize();
+		frame.setVisible(true);
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 700, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel label = new JLabel("New label");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBounds(12, 3, 158, 54);
+		frame.getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("New label");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setBounds(566, 10, 114, 41);
+		frame.getContentPane().add(label_1);
+		
+		JLabel label_2 = new JLabel("\uBCF4\uCDA9\uC790\uB8CC");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 25));
+		label_2.setBounds(178, 61, 330, 41);
+		frame.getContentPane().add(label_2);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 120, 680, 341);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(12, 10, 656, 83);
+		panel.add(lblNewLabel);
+// url 연결 못했어요ㅠ...  주석처리한 부분은 참고용이에요		
+		JButton btn_1 = new JButton("\uC218\uC5C5 \uC790\uB8CC_Dropbox(https://www.dropbox.com/sh/kd52fl6w4tls1iv/AAC1vM5InB2SFzhY3lA_HZHKa?dl=0)");
+//		btn_1.addActionListener(new OpenUrlAction() {
+//			  private static void open(URI uri) {
+//			    if (Desktop.isDesktopSupported()) {
+//			      try {
+//			        Desktop.getDesktop().browse(uri);
+//			      } catch (IOException e) { /* TODO: error handling */ }
+//			    } else { /* TODO: error handling */ }
+//			  }
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
+		btn_1.setHorizontalAlignment(SwingConstants.LEFT);
+		btn_1.setBounds(34, 140, 634, 40);
+		panel.add(btn_1);
+		
+		JLabel label_3 = new JLabel("2. \uC720\uD615\uBCC4 \uBB38\uC81C");
+		label_3.setFont(new Font("굴림", Font.PLAIN, 20));
+		label_3.setBounds(12, 180, 656, 40);
+		panel.add(label_3);
+		
+		JButton btn_2 = new JButton("\uD30C\uC774\uC36C 300\uC81C(https://wikidocs.net/7014)");
+		btn_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_2.setHorizontalAlignment(SwingConstants.LEFT);
+		btn_2.setBounds(34, 220, 634, 40);
+		panel.add(btn_2);
+		
+		JLabel label_4 = new JLabel("3.  \uC2A4\uB9C8\uD2B8\uC778\uC7AC\uAC1C\uBC1C\uC6D0 \uC720\uD29C\uBE0C \uC601\uC0C1");
+		label_4.setFont(new Font("굴림", Font.PLAIN, 20));
+		label_4.setBounds(12, 260, 656, 40);
+		panel.add(label_4);
+		
+		JLabel label_5 = new JLabel("1. \uAC1C\uB150 \uC815\uB9AC \uC790\uB8CC");
+		label_5.setFont(new Font("굴림", Font.PLAIN, 20));
+		label_5.setBounds(12, 100, 656, 40);
+		panel.add(label_5);
+		
+		JButton btn_3 = new JButton("\uC778\uC324tv_\uC790\uBC14 \uAE30\uCD08(https://www.youtube.com/watch?v=5meyGXiNgeY)");
+		btn_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_3.setHorizontalAlignment(SwingConstants.LEFT);
+		btn_3.setBounds(34, 300, 634, 40);
+		panel.add(btn_3);
+		
+
+
+	}
+}

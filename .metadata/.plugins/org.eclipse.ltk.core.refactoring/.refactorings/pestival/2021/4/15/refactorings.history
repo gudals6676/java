@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 7 elements from project &apos;pestival&apos;&#x0D;&#x0A;- Original project: &apos;pestival&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     pestival.a.java&#x0D;&#x0A;     pestival.b.java&#x0D;&#x0A;     pestival.c.java&#x0D;&#x0A;     pestival.d.java&#x0D;&#x0A;     pestival.e.java&#x0D;&#x0A;     pestival.f.java&#x0D;&#x0A;     pestival.g.java" description="Delete elements" element1="/src&lt;pestival{f.java" element2="/src&lt;pestival{a.java" element3="/src&lt;pestival{g.java" element4="/src&lt;pestival{b.java" element5="/src&lt;pestival{e.java" element6="/src&lt;pestival{c.java" element7="/src&lt;pestival{d.java" elements="7" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1617870145962" subPackages="false" version="1.0"/>
+</session>

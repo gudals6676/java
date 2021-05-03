@@ -1,0 +1,129 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class LoginJoin1 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField tf_아이디;
+	private JTextField tf_비밀번호;
+	private JTextField tf_이름;
+	private JTextField tf_생년월일;
+	private JTextField tf_이메일;
+	private JTextField tf_전화번호;
+	private JTextField tf_주소;
+
+	/**
+	 * Launch the application.
+	 */
+
+	/**
+	 * Create the frame.
+	 */
+	public LoginJoin1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 200, 450, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(23, 10, 148, 51);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lbl_M = new JLabel("\uD658\uC601\uD569\uB2C8\uB2E4!!");
+		lbl_M.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lbl_M.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_M.setBounds(134, 71, 148, 60);
+		contentPane.add(lbl_M);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(280, 19, 80, 33);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lbl_아이디 = new JLabel("\uC544\uC774\uB514 :");
+		lbl_아이디.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_아이디.setBounds(85, 159, 64, 26);
+		contentPane.add(lbl_아이디);
+		
+		JLabel lbl_비밀번호 = new JLabel("\uBE44\uBC00\uBC88\uD638 :");
+		lbl_비밀번호.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_비밀번호.setBounds(85, 195, 64, 26);
+		contentPane.add(lbl_비밀번호);
+		
+		JLabel lbl_이름 = new JLabel("\uC774\uB984 :");
+		lbl_이름.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_이름.setBounds(85, 227, 64, 26);
+		contentPane.add(lbl_이름);
+		
+		JLabel lbl_생년월일 = new JLabel("\uC0DD\uB144\uC6D4\uC77C :");
+		lbl_생년월일.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_생년월일.setBounds(85, 263, 64, 26);
+		contentPane.add(lbl_생년월일);
+		
+		JLabel lbl_이메일 = new JLabel("\uC774\uBA54\uC77C :");
+		lbl_이메일.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_이메일.setBounds(85, 292, 64, 26);
+		contentPane.add(lbl_이메일);
+		
+		JLabel lbl_전화번호 = new JLabel("\uC804\uD654\uBC88\uD638 :");
+		lbl_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_전화번호.setBounds(85, 328, 64, 26);
+		contentPane.add(lbl_전화번호);
+		
+		JLabel lbl_주소 = new JLabel("\uC8FC\uC18C :");
+		lbl_주소.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_주소.setBounds(85, 364, 64, 26);
+		contentPane.add(lbl_주소);
+		
+		tf_아이디 = new JTextField();
+		tf_아이디.setBounds(201, 162, 129, 21);
+		contentPane.add(tf_아이디);
+		tf_아이디.setColumns(10);
+		
+		tf_비밀번호 = new JTextField();
+		tf_비밀번호.setColumns(10);
+		tf_비밀번호.setBounds(201, 198, 129, 21);
+		contentPane.add(tf_비밀번호);
+		
+		tf_이름 = new JTextField();
+		tf_이름.setColumns(10);
+		tf_이름.setBounds(201, 230, 129, 21);
+		contentPane.add(tf_이름);
+		
+		tf_생년월일 = new JTextField();
+		tf_생년월일.setColumns(10);
+		tf_생년월일.setBounds(201, 266, 129, 21);
+		contentPane.add(tf_생년월일);
+		
+		tf_이메일 = new JTextField();
+		tf_이메일.setColumns(10);
+		tf_이메일.setBounds(201, 295, 129, 21);
+		contentPane.add(tf_이메일);
+		
+		tf_전화번호 = new JTextField();
+		tf_전화번호.setColumns(10);
+		tf_전화번호.setBounds(201, 331, 129, 21);
+		contentPane.add(tf_전화번호);
+		
+		tf_주소 = new JTextField();
+		tf_주소.setColumns(10);
+		tf_주소.setBounds(201, 367, 129, 21);
+		contentPane.add(tf_주소);
+		
+		JButton btn = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btn.setBounds(316, 411, 106, 40);
+		contentPane.add(btn);
+	}
+
+}

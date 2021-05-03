@@ -1,0 +1,111 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+public class StudentinfoGUI1 extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					StudentinfoGUI1 frame = new StudentinfoGUI1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public StudentinfoGUI1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 727, 501);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(12, 10, 159, 48);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(410, 10, 96, 37);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("STUDENT INFO");
+		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 25));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(115, 84, 206, 48);
+		contentPane.add(lblNewLabel_2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 142, 422, 277);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton = new JButton("\uBA74\uB2F4 \uC2E0\uCCAD");
+		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
+		btnNewButton.setBounds(522, 406, 97, 33);
+		contentPane.add(btnNewButton);
+		
+		JLabel lbl_이름 = new JLabel("\uC774\uB984");
+		lbl_이름.setBounds(468, 157, 82, 24);
+		contentPane.add(lbl_이름);
+		
+		JLabel lbl_전화번호 = new JLabel("\uC804\uD654\uBC88\uD638");
+		lbl_전화번호.setBounds(468, 202, 82, 24);
+		contentPane.add(lbl_전화번호);
+		
+		JLabel lbl_이메일 = new JLabel("\uC774\uBA54\uC77C");
+		lbl_이메일.setBounds(468, 247, 82, 24);
+		contentPane.add(lbl_이메일);
+		
+		JLabel lbl_주소 = new JLabel("\uC8FC\uC18C");
+		lbl_주소.setBounds(468, 293, 82, 24);
+		contentPane.add(lbl_주소);
+		
+		JLabel info_주소 = new JLabel("");
+		info_주소.setHorizontalAlignment(SwingConstants.CENTER);
+		info_주소.setBounds(590, 293, 82, 24);
+		contentPane.add(info_주소);
+		
+		JLabel info_이메일 = new JLabel("");
+		info_이메일.setHorizontalAlignment(SwingConstants.CENTER);
+		info_이메일.setBounds(590, 247, 82, 24);
+		contentPane.add(info_이메일);
+		
+		JLabel info_전화번호 = new JLabel("");
+		info_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
+		info_전화번호.setBounds(590, 207, 82, 24);
+		contentPane.add(info_전화번호);
+		
+		JLabel info_이름 = new JLabel("");
+		info_이름.setHorizontalAlignment(SwingConstants.CENTER);
+		info_이름.setBounds(590, 157, 82, 24);
+		contentPane.add(info_이름);
+	}
+
+}

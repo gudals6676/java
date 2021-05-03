@@ -1,0 +1,75 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JButton;
+
+public class LunchGUI extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LunchGUI frame = new LunchGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public LunchGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 480, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lbl_img1 = new JLabel("New label");
+		lbl_img1.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_img1.setBounds(75, 151, 129, 112);
+		contentPane.add(lbl_img1);
+		
+		JLabel lbl_img2 = new JLabel("New label");
+		lbl_img2.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_img2.setBounds(256, 151, 129, 112);
+		contentPane.add(lbl_img2);
+		
+		JLabel lbl_img3 = new JLabel("New label");
+		lbl_img3.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_img3.setBounds(256, 296, 129, 112);
+		contentPane.add(lbl_img3);
+		
+		JLabel lbl_img4 = new JLabel("New label");
+		lbl_img4.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_img4.setBounds(75, 296, 129, 112);
+		contentPane.add(lbl_img4);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uC624\uB298\uC740 \uBB50\uBA39\uC9D5?");
+		lblNewLabel_1.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(165, 70, 146, 50);
+		contentPane.add(lblNewLabel_1);
+		
+		JButton btn_뒤로가기 = new JButton("\uB4A4\uB85C\uAC00\uAE30");
+		btn_뒤로가기.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		btn_뒤로가기.setBounds(383, 428, 81, 23);
+		contentPane.add(btn_뒤로가기);
+	}
+
+}

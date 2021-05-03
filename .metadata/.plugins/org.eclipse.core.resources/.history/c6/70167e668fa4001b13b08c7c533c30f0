@@ -1,0 +1,67 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.SwingConstants;
+
+public class ChoiceGUI1 extends JFrame {
+   
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ChoiceGUI1 frame = new ChoiceGUI1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ChoiceGUI1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 400);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btn_학생 = new JButton("New button");
+		btn_학생.setBounds(36, 211, 128, 73);
+		contentPane.add(btn_학생);
+		
+		JButton btn_선생 = new JButton("New button");
+		btn_선생.setBounds(253, 211, 121, 73);
+		contentPane.add(btn_선생);
+		
+		JLabel lbl_학생 = new JLabel("New label");
+		lbl_학생.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_학생.setBounds(36, 68, 155, 133);
+		contentPane.add(lbl_학생);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(137, 0, 128, 48);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lbl_선생님 = new JLabel("New label");
+		lbl_선생님.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_선생님.setBounds(225, 68, 149, 133);
+		contentPane.add(lbl_선생님);
+	}
+
+}

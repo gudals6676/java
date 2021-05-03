@@ -1,0 +1,59 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+
+
+public class Ex04Select implements Rule_inter{
+
+	public void execute() {
+		// 테이블에 있는 전체 데이터를 현재 콘솔창에 출력해보시오.
+		
+
+		
+
+		try {
+
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			String dbid = "hr";
+			String dbpw = "hr";
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
+
+			String sql = "select * from JDBC_member";
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = psmt.executeQuery();
+
+			//insert, update, delete: executeUpdate() -> 정수형리턴(명령에 성공한 수)
+            //select : executeQuery() -> 테이블에 있는 값을 리턴
+			
+			while(rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String tel = rs.getString(3);
+				String email = rs.getString(4);
+				String addr = rs.getString(5);
+				
+				System.out.println("ID : "+ id);
+				System.out.println("PW : "+ pw);
+				System.out.println("Tel : "+ tel);
+				System.out.println("Email : "+ email);
+				System.out.println("Address : "+ addr);
+				System.out.println("----------------");
+			}
+			
+
+		} catch (Exception e) {
+
+			System.out.println("try문에 에러가 발생했습니다.");
+			e.printStackTrace();
+		}
+
+	}
+
+}

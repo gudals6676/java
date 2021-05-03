@@ -1,0 +1,71 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+public class StudentGUI extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					StudentGUI1 frame = new StudentGUI1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public StudentGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 500, 400);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(243, 10, 229, 341);
+		contentPane.add(panel);
+		
+		JButton btn_성적 = new JButton("\uC131\uC801\uC870\uD68C");
+		btn_성적.setBounds(55, 73, 97, 44);
+		contentPane.add(btn_성적);
+		
+		JButton btn_시간표 = new JButton("\uC2DC\uAC04\uD45C");
+		btn_시간표.setBounds(55, 127, 97, 44);
+		contentPane.add(btn_시간표);
+		
+		JButton btn_게시판 = new JButton("\uAC8C\uC2DC\uD310");
+		btn_게시판.setBounds(55, 181, 97, 50);
+		contentPane.add(btn_게시판);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(12, 10, 158, 44);
+		contentPane.add(lblNewLabel);
+		
+		JButton btn_점심 = new JButton("\uC810\uC2EC \uBB50\uBA39\uC9D5?");
+		btn_점심.setBounds(55, 245, 115, 44);
+		contentPane.add(btn_점심);
+		
+		JButton btn_로그아웃 = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		btn_로그아웃.setBounds(12, 328, 85, 23);
+		contentPane.add(btn_로그아웃);
+	}
+}

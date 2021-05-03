@@ -1,0 +1,20 @@
+package ClassMethod;
+
+import java.util.Scanner;
+
+public class Plus민호 {
+
+	public void plus() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수 두 개를 입력하세요.");
+		System.out.print("정수1 : ");
+        int num1 = sc.nextInt();
+        System.out.print("정수2 : ");
+        int num2 = sc.nextInt();
+        
+        System.out.println(num1 + num2);
+
+	}
+
+}

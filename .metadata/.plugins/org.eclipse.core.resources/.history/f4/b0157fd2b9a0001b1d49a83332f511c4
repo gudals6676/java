@@ -1,0 +1,46 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class Ex02Delete {
+
+	public void delete() {
+		// 사용자에게 id값을 입력받아 해당 id값을 테이블에서 삭제하시오.
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("ID>>");
+		String id = sc.next();
+
+		try {
+
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			String dbid = "hr";
+			String dbpw = "hr";
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			Connection conn = DriverManager.getConnection(url, dbid, dbpw);
+
+			String sql = "delete from JDBC_member where id = ?";
+			PreparedStatement psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, id);
+
+			int cnt = psmt.executeUpdate();
+
+			if (cnt > 0) {
+				System.out.println("삭제성공");
+			} else {
+				System.out.println("삭제실패");
+			}
+
+		} catch (Exception e) {
+
+			System.out.println("try문에 에러가 발생했습니다.");
+			e.printStackTrace();
+		}
+
+	}
+
+}

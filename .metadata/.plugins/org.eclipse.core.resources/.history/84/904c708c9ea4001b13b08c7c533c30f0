@@ -1,0 +1,60 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JButton;
+
+public class Classmgment_GUI {
+
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	
+
+	/**
+	 * Create the application.
+	 */
+	public Classmgment_GUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 600, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 157, 435, 294);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JLabel lblNewLabel = new JLabel("CLASS LIST");
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 24));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(140, 83, 186, 52);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("\uBC18 \uC0DD\uC131");
+		btnNewButton.setFont(new Font("±¼¸²", Font.BOLD, 13));
+		btnNewButton.setBounds(459, 199, 97, 43);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton button = new JButton("\uBC18 \uC0AD\uC81C");
+		button.setFont(new Font("±¼¸²", Font.BOLD, 13));
+		button.setBounds(459, 262, 97, 43);
+		frame.getContentPane().add(button);
+	}
+}

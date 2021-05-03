@@ -1,0 +1,82 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+public class ScoreManagementGUI extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ScoreManagementGUI1 frame = new ScoreManagementGUI1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ScoreManagementGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 500, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(12, 0, 142, 49);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(294, 4, 128, 41);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lbl_M = new JLabel("SCORE INFO");
+		lbl_M.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 25));
+		lbl_M.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_M.setBounds(86, 86, 173, 49);
+		contentPane.add(lbl_M);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 158, 353, 303);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton = new JButton("\uC218\uC815");
+		btnNewButton.setBounds(378, 305, 80, 23);
+		contentPane.add(btnNewButton);
+		
+		JButton button = new JButton("\uCD94\uAC00");
+		button.setBounds(378, 339, 80, 23);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("\uC0AD\uC81C");
+		button_1.setBounds(378, 372, 80, 23);
+		contentPane.add(button_1);
+	}
+
+}

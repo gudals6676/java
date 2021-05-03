@@ -1,0 +1,12 @@
+package ClassMethod;
+
+import java.util.Scanner;
+
+public class Minus¿µÁÖ {
+
+	public void minus(int num1, int num2){
+		           
+        System.out.println(num1 - num2);
+	}
+
+}

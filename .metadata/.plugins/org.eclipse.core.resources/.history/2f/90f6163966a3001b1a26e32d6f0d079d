@@ -1,0 +1,63 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+public class StudenGUI extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					StudenGUI frame = new StudenGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public StudenGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(243, 10, 179, 241);
+		contentPane.add(panel);
+		
+		JButton btnNewButton = new JButton("\uC131\uC801\uC870\uD68C");
+		btnNewButton.setBounds(55, 73, 97, 44);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\uC2DC\uAC04\uD45C");
+		btnNewButton_1.setBounds(55, 127, 97, 44);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("\uBCF4\uCDA9\uC2E0\uCCAD");
+		btnNewButton_2.setBounds(55, 181, 97, 50);
+		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(12, 10, 158, 44);
+		contentPane.add(lblNewLabel);
+	}
+}

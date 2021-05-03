@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+import javazoom.jl.player.MP3Player;
+
+public class Musicplayer {
+	MP3Player mp3 = new MP3Player();
+  ArrayList<Music> Musiclist = new ArrayList<Music>();
+  int curIndex = 0;
+  
+  public Musicplayer() {
+	  Musiclist.add(new Music("DallaDalla", "itzy", 100,"C://music/Itzy - Dalla Dalla.mp3"));
+	  Musiclist.add(new Music("깡","Rain" , 120, "C://music/Rain - 깡.mp3"));
+	  Musiclist.add(new Music("SOLO", "Jennie", 200, "C://music/JENNIE - SOLO.mp3"));
+  }
+  public Music play() {
+	 Music m = Musiclist.get(curIndex) ;
+	 if(mp3.isPlaying()) {
+		 mp3.stop();
+	 }
+	  mp3.play(m.getMusicPath());
+	  return m;
+  }
+  public Music nextplay() {
+	  curIndex++;
+	  if(curIndex == Musiclist.size()) {
+		  curIndex = 0;
+	  }
+	  if(mp3.isPlaying()) {
+			 mp3.stop();
+		 }
+		  
+	  Music m = Musiclist.get(curIndex);
+	  mp3.play(m.getMusicPath());
+	  
+	  return m;
+  }
+  public Music preplay() {
+	  curIndex--;
+	 if(curIndex < 0 ) {
+		 curIndex = Musiclist.size()-1;
+		 
+	 }
+	 if(mp3.isPlaying()) {
+		 mp3.stop();
+	 }
+	 Music m = Musiclist.get(curIndex);
+	mp3.play(m.getMusicPath());	 
+	  return m;
+  }
+  public String stop() {
+	  if(mp3.isPlaying()) {
+			 mp3.stop();
+		 }
+	  return "노래가 정지되었습니다.";
+  }
+}

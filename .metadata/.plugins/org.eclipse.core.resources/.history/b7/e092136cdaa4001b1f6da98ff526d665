@@ -1,0 +1,79 @@
+CREATE TABLE board (
+    bd_number          VARCHAR2(20) NOT NULL,
+    stu_number         VARCHAR2(10) NOT NULL,
+    bd_date            VARCHAR2(20) NOT NULL,
+    bd_time            VARCHAR2(20) NOT NULL,
+    bd_place           VARCHAR2(20) NOT NULL,
+    bd_numberofpeople  VARCHAR2(20) NOT NULL,
+    bd_content         VARCHAR2(100) NOT NULL
+);
+
+ALTER TABLE board ADD CONSTRAINT board_pk PRIMARY KEY ( bd_number );
+
+CREATE TABLE class (
+    class_number     VARCHAR2(20) NOT NULL,
+    tea_number       VARCHAR2(20) NOT NULL,
+    class_name       VARCHAR2(20) NOT NULL,
+    class_startdate  VARCHAR2(20) NOT NULL,
+    class_enddate    VARCHAR2(20) NOT NULL,
+    class_branch     VARCHAR2(20)
+);
+
+ALTER TABLE class ADD CONSTRAINT class_pk PRIMARY KEY ( class_number );
+
+CREATE TABLE score (
+    stu_number      VARCHAR2(10) NOT NULL,
+    javascore       VARCHAR2(20),
+    javatestdate    VARCHAR2(20),
+    pythonscore     VARCHAR2(20),
+    pythontestdate  VARCHAR2(20)
+);
+
+ALTER TABLE score ADD CONSTRAINT score_pk PRIMARY KEY ( stu_number );
+
+CREATE TABLE student (
+    stu_number    VARCHAR2(10) NOT NULL,
+    stu_id        VARCHAR2(20) NOT NULL,
+    stu_pw        VARCHAR2(20) NOT NULL,
+    stu_name      VARCHAR2(20) NOT NULL,
+    stu_birthday  VARCHAR2(20) NOT NULL,
+    stu_tel       VARCHAR2(20),
+    stu_address   VARCHAR2(30) NOT NULL,
+    stu_email     VARCHAR2(20),
+    class_number  VARCHAR2(20) NOT NULL,
+    tea_number    VARCHAR2(20) NOT NULL
+);
+
+ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY ( stu_number );
+
+CREATE TABLE teacher (
+    tea_number   VARCHAR2(20) NOT NULL,
+    tea_id       VARCHAR2(20) NOT NULL,
+    tea_pw       VARCHAR2(20) NOT NULL,
+    tea_name     VARCHAR2(20) NOT NULL,
+    tea_subject  VARCHAR2(20)
+);
+
+ALTER TABLE teacher ADD CONSTRAINT teacher_pk PRIMARY KEY ( tea_number );
+
+ALTER TABLE board
+    ADD CONSTRAINT board_student_fk FOREIGN KEY ( stu_number )
+        REFERENCES student ( stu_number );
+
+ALTER TABLE class
+    ADD CONSTRAINT class_teacher_fk FOREIGN KEY ( tea_number )
+        REFERENCES teacher ( tea_number );
+
+ALTER TABLE score
+    ADD CONSTRAINT score_student_fk FOREIGN KEY ( stu_number )
+        REFERENCES student ( stu_number );
+
+ALTER TABLE student
+    ADD CONSTRAINT student_class_fk FOREIGN KEY ( class_number )
+        REFERENCES class ( class_number );
+
+ALTER TABLE student
+    ADD CONSTRAINT student_teacher_fk FOREIGN KEY ( tea_number )
+        REFERENCES teacher ( tea_number );
+
+select * from student

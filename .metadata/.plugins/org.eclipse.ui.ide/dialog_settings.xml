@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\21SMT17\Desktop\Java\Koguma2"/>
+		<item value="C:\Users\21SMT17\Desktop\Java"/>
+		<item value="C:\Users\21SMT17\Desktop\Java\Coguma2"/>
+		<item value="C:\Users\21SMT17\Desktop\Java\메인gui\Coguma2"/>
+		<item value="C:\Users\21SMT17\Desktop\Java\메인gui"/>
+		<item value="C:\Users\21SMT17\Desktop\Java\메인GUI"/>
+		<item value="C:\Users\21SMT17\Desktop\메인gui"/>
+	</list>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
+			<item value="C:\Users\21SMT17\Desktop\Java"/>
+			<item value="C:\Users\21SMT17\Desktop\FestivalPractice3"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\21SMT17\Desktop\cogumajiyun1.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\CC1.4.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\CC1.3.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\CC1.2.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\CC1.0.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\GUIv3.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\cogumajiyun (7).zip"/>
+			<item value="C:\Users\21SMT17\Desktop\vo (1).zip"/>
+			<item value="C:\Users\21SMT17\Desktop\vo.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\Coguma_jh.zip"/>
+			<item value="C:\Users\21SMT17\Desktop\cogumajiyun.zip"/>
+			<item value=""/>
+			<item value="C:\Users\21SMT17\Desktop\koko.zip"/>
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="710"/>
+		<item key="DIALOG_Y_ORIGIN" value="252"/>
+		<item key="DIALOG_WIDTH" value="500"/>
+		<item key="DIALOG_HEIGHT" value="402"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="203"/>
+		<item key="DIALOG_Y_ORIGIN" value="197"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+</section>

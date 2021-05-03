@@ -1,0 +1,87 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.SpringLayout;
+import java.awt.CardLayout;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import java.awt.Font;
+
+public class MusicPlayerGUI {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MusicPlayerGUI window = new MusicPlayerGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MusicPlayerGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		//setBounds(x√‡¿ßƒ°, y√‡¿ßƒ°, ≥–¿Ã, ≥Ù¿Ã)
+		frame.setBounds(300, 300, 750, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.YELLOW);
+		panel.setBounds(30, 28, 675, 97);
+		frame.getContentPane().add(panel);
+		panel.setLayout(new CardLayout(0, 0));
+		
+		JLabel lblNewLabel = new JLabel("Music Info");
+		lblNewLabel.setBackground(Color.YELLOW);
+		lblNewLabel.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 44));
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lblNewLabel, "name_230437708654000");
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.ORANGE);
+		panel_1.setBounds(30, 135, 675, 97);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JButton btnNewButton_2 = new JButton("\u25C0\u25C0");
+		btnNewButton_2.setBackground(Color.ORANGE);
+		panel_1.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("\u25B6");
+		btnNewButton_3.setBackground(Color.GREEN);
+		panel_1.add(btnNewButton_3);
+		
+		JButton btnNewButton = new JButton("\u25A0");
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\u25B6\u25B6");
+		panel_1.add(btnNewButton_1);
+	}
+}

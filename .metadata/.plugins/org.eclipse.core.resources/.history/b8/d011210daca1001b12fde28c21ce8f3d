@@ -1,0 +1,54 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+
+import VO.MemberVO;
+
+
+
+public class MemberDAO {
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	int cnt = 0;
+	String sql = "";
+	MemberVO vo = null;
+	ResultSet rs = null;
+	public void getConn() {
+		try {
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			String dbid = "hr";
+			String dbpw = "hr";
+
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			conn = DriverManager.getConnection(url, dbid, dbpw);
+
+public int joininsert(String id, String pw, String name, String gender, String hobby) {
+		
+		try {
+			getConn();
+			
+			sql = "insert into memberinfo values(?,?,?,?,?)";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+			psmt.setString(3, name);
+			psmt.setString(4, gender);
+			psmt.setString(5, hobby);
+
+			cnt = psmt.executeUpdate();
+
+		} catch (Exception e) {
+
+			System.out.println("try문에 에러가 발생했습니다.");
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+}

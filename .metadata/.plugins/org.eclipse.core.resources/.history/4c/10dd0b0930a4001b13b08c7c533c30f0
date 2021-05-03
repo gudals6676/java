@@ -1,0 +1,70 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+public class ClassmgmentGUI extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ClassmgmentGUI frame = new ClassmgmentGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ClassmgmentGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 156, 321, 295);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JLabel lbl = new JLabel("CLASS LIST");
+		lbl.setFont(new Font("讣篮 绊雕", Font.BOLD, 20));
+		lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl.setBounds(91, 88, 142, 38);
+		contentPane.add(lbl);
+		
+		JButton btn_积己 = new JButton("\uBC18 \uC0DD\uC131");
+		btn_积己.setFont(new Font("讣篮 绊雕", Font.PLAIN, 12));
+		btn_积己.setBounds(395, 229, 97, 38);
+		contentPane.add(btn_积己);
+		
+		JButton btn_昏力 = new JButton("\uBC18 \uC0AD\uC81C");
+		btn_昏力.setFont(new Font("讣篮 绊雕", Font.PLAIN, 12));
+		btn_昏力.setBounds(395, 290, 97, 38);
+		contentPane.add(btn_昏力);
+	}
+
+}

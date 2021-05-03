@@ -1,0 +1,14 @@
+package ClassMethod;
+
+import java.util.Scanner;
+
+public class Plus¹ÎÈ£ {
+
+	public int plus(int num1, int num2) {
+
+		int result = num1 + num2;
+		
+        return result;
+	}
+
+}

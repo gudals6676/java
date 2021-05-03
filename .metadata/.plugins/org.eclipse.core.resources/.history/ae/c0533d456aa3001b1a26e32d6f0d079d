@@ -1,0 +1,91 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+public class StudentinfoGUI extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					StudentinfoGUI frame = new StudentinfoGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public StudentinfoGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 727, 501);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(12, 10, 159, 48);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(410, 10, 96, 37);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("STUDENT INFO");
+		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 25));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(115, 84, 206, 48);
+		contentPane.add(lblNewLabel_2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 142, 422, 277);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton = new JButton("\uBA74\uB2F4 \uC2E0\uCCAD");
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 14));
+		btnNewButton.setBounds(522, 406, 97, 33);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_3 = new JLabel("\uC774\uB984");
+		lblNewLabel_3.setBounds(468, 143, 57, 33);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel label = new JLabel("\uC804\uD654\uBC88\uD638");
+		label.setBounds(468, 193, 57, 33);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("\uC774\uBA54\uC77C");
+		label_1.setBounds(468, 244, 57, 33);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("\uC8FC\uC18C");
+		label_2.setBounds(468, 297, 57, 33);
+		contentPane.add(label_2);
+	}
+
+}

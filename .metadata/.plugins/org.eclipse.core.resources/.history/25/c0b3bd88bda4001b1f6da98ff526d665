@@ -1,0 +1,101 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+import VO.StudentVO;;
+
+public class StudentDAO {
+	
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	int cnt = 0;
+	String sql = "";
+	 VO.StudentVO vo = null;
+	ResultSet rs = null;
+	Scanner sc = new Scanner(System.in);
+	// 설정 지역변수들 전부 여기로 꺼내놓은 배운것 그대로 썻음..
+	
+	public void getConn() { //커넥부분
+		try {
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			String dbid = "hr";
+			String dbpw = "hr";
+			conn = DriverManager.getConnection(url, dbid, dbpw);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	public void close() {
+		try {
+			if(rs != null) {
+				rs.close();
+			}
+			if(psmt != null) {
+				psmt.close();
+			}
+			if(conn!=null) {
+				conn.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	public boolean Class_delete(String class_delete_number) {
+	      // 클래스 삭제
+	      boolean result = false;
+	      getConn();
+	      String sql = "delete from Class where Class_Number=?";
+	      try {
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, class_delete_number);
+
+	         int cnt = psmt.executeUpdate();
+	         
+	         if(cnt>0) {
+	            result = true;
+	         }else {
+	            result = false;
+	         }
+	      } catch (Exception e) {	        
+	         e.printStackTrace();
+	      }finally {
+	         close();
+	      }      
+	      return result;
+	   }
+	public boolean Class_delete() {		
+		return false;
+	}///면담신청시 학생에게 알람
+	public int Student_update(String Stu_meet) {
+		
+		try {
+
+			getConn();
+			sql = "";			
+			sql = " update student where id = ?";							
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, Stu_meet);
+				
+			cnt = psmt.executeUpdate();
+
+			
+
+		} catch (Exception e) {
+			System.out.println("try문에 에러가 발생했습니다.");
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+}
